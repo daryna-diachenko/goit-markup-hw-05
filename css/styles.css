@@ -9,6 +9,8 @@
   --footer-background-color: #2f303a;
   --card-margin: 30px;
   --border-color: #afb1b8;
+  --transition-duration: 250ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -123,7 +125,7 @@ button {
 
   color: var(--secondary-text-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--timing-function);
 }
 
 .header-item:not(:last-child) {
@@ -156,12 +158,12 @@ button {
 
   color: var(--primary-text-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--timing-function);
 }
 
 .contacts-hover {
   color: var(--primary-text-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--timing-function);
 }
 
 .contacts-hover:hover {
@@ -255,7 +257,7 @@ button {
   color: var(--primary-background-color);
   background-color: var(--accent-color);
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-duration) var(--timing-function);
 }
 
 .hero-button:hover,
@@ -280,7 +282,7 @@ button {
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--transition-duration) var(--timing-function);
 }
 
 .backdrop.is-hidden {
@@ -293,7 +295,8 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition: scale 5050ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-duration) var(--timing-function),
+    box-shadow var(--transition-duration) var(--timing-function);
 
   width: 528px;
   height: 581px;
@@ -325,7 +328,7 @@ button {
 
 .modal-icon {
   fill: var(--nav-text-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--transition-duration) var(--timing-function);
 }
 
 .modal-icon:hover {
@@ -483,8 +486,8 @@ button {
 
   color: var(--border-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--timing-function),
+    background-color var(--transition-duration) var(--timing-function);
 }
 
 .social-link:hover,
@@ -495,7 +498,7 @@ button {
 
 .social-icon {
   fill: currentColor;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--transition-duration) var(--timing-function);
 }
 
 .social-icon:hover {
@@ -525,8 +528,8 @@ button {
   border-radius: 4px;
   color: var(--border-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--timing-function),
+    border var(--transition-duration) var(--timing-function);
 }
 
 .clients-link:hover,
@@ -566,8 +569,9 @@ button {
   color: var(--secondary-text-color);
   background-color: var(--secondary-background-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-duration) var(--timing-function),
+    color var(--transition-duration) var(--timing-function),
+    box-shadow var(--transition-duration) var(--timing-function);
 }
 
 .filter-button:hover,
@@ -596,19 +600,18 @@ button {
 
 .project-link {
   display: block;
+  transition: box-shadow var(--transition-duration) var(--timing-function);
 }
 
 .project-link:hover,
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link:hover .project-overlay,
 .project-link:focus .project-overlay {
   transform: translateY(0);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-img-box {
@@ -624,6 +627,7 @@ button {
   height: 100%;
 
   transform: translateY(101%);
+  transition: transform var(--transition-duration) var(--timing-function);
 
   background-color: rgba(33, 150, 243, 0.9);
 }
@@ -696,7 +700,7 @@ button {
 
 .footer-link.transparent {
   color: var(--contacts-text-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--timing-function);
 }
 
 .footer-link.transparent:hover,
@@ -716,8 +720,8 @@ button {
 .footer-social .social-link {
   color: var(--primary-background-color);
   background-color: rgba(255, 255, 255, 0.1);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--timing-function),
+    background-color var(--transition-duration) var(--timing-function);
 }
 
 .footer-social .social-link:hover,
